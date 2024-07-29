@@ -1,0 +1,23 @@
+<div [id]="'collapse'+effect" class="carousel slide bg-light" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+idPoke+'.png'" class="d-block w-25 m-auto" alt="...">
+    </div>
+
+    <div class="carousel-item" *ngFor="let id of listaPoke">
+<a [href]="'http://localhost:4200/description/'+id">
+  <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+id+'.png'" class="d-block w-25 m-auto" alt="...">
+
+</a>
+
+    </div>
+  </div>
+  <button class="carousel-control-prev bg-black" type="button" [attr.data-bs-target]="'#collapse'+effect" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next bg-black" type="button" [attr.data-bs-target]="'#collapse'+effect" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

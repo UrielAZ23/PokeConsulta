@@ -1,0 +1,18 @@
+
+<div *ngFor="let abilities of pokeAbilities">
+  <div class="accordion accordion-flush border border-1" id="{{abilities.id}}">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+abilities.name" aria-expanded="false" [attr.aria-controls]="abilities.name">
+          <strong class="text-uppercase">{{abilities.name}}</strong>
+        </button>
+      </h2>
+      <div id="{{abilities.name}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
+        <div class="accordion-body"><strong>Efecto: </strong>{{abilities.effect}} <br>
+          <strong>Pokemon que usa la habilidad: </strong>
+          <app-carusel-img [pokemones]="abilities.pokemones" [effect]="abilities.name"></app-carusel-img>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
